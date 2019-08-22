@@ -3374,6 +3374,8 @@ input, select, textarea {
 	#hp  {
 float: left;    
  margin: 0 25px 0 0;
+width: 25%;
+ height: auto;
 }
 
 
