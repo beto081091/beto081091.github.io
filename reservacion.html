@@ -1,0 +1,1092 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Mirador Teques</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="shortcut icon" href="/images/mirador.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="https://b0mh0lt.github.io/freeCodeCamp/_assets/css/material-components700.min.css" />
+        
+
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <script src='https://b0mh0lt.github.io/freeCodeCamp/_assets/js/jquery351.min.js' type='text/javascript'></script>
+        <script src='https://b0mh0lt.github.io/freeCodeCamp/_assets/js/material-components700.min.js' type='text/javascript'></script>
+        <script src='https://b0mh0lt.github.io/freeCodeCamp/_assets/js/brands.min.js' type='text/javascript'></script>
+        <script src='https://b0mh0lt.github.io/freeCodeCamp/_assets/js/solid.min.js' type='text/javascript'></script>
+        <script src='https://b0mh0lt.github.io/freeCodeCamp/_assets/js/fontawesome.min.js' type='text/javascript'></script>
+        
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' type='text/javascript'></script>
+        <script src='https://unpkg.com/popper.js' type='text/javascript'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js' type='text/javascript'></script>
+        <script src="assets/js/jssor.slider-27.5.0.min.js" type="text/javascript"></script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js' type='text/javascript'></script>
+        <script type="text/javascript">
+        jssor_1_slider_init = function() {
+
+            var jssor_1_SlideshowTransitions = [
+              {$Duration:800,x:0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2}
+            ];
+
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*#region responsive code begin*/
+
+            var MAX_WIDTH = 5000;
+
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };
+        </script>
+        <style>
+            /* jssor slider loading skin double-tail-spin css */
+
+            .jssorl-004-double-tail-spin img {
+                animation-name: jssorl-004-double-tail-spin;
+                animation-duration: 1.2s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+
+            @keyframes jssorl-004-double-tail-spin {
+                from {
+                    transform: rotate(0deg);
+                }
+
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+
+            .jssorb051 .i {
+                position: absolute;
+                cursor: pointer;
+            }
+
+                .jssorb051 .i .b {
+                    fill: #fff;
+                    fill-opacity: 0.5;
+                    stroke: #000;
+                    stroke-width: 400;
+                    stroke-miterlimit: 10;
+                    stroke-opacity: 0.5;
+                }
+
+                .jssorb051 .i:hover .b {
+                    fill-opacity: .7;
+                }
+
+            .jssorb051 .iav .b {
+                fill-opacity: 1;
+            }
+
+            .jssorb051 .i.idn {
+                opacity: .3;
+            }
+
+            .jssora051 {
+                display: block;
+                position: absolute;
+                cursor: pointer;
+            }
+
+                .jssora051 .a {
+                    fill: none;
+                    stroke: #fff;
+                    stroke-width: 360;
+                    stroke-miterlimit: 10;
+                }
+
+                .jssora051:hover {
+                    opacity: .8;
+                }
+
+                .jssora051.jssora051dn {
+                    opacity: .5;
+                }
+
+                .jssora051.jssora051ds {
+                    opacity: .3;
+                    pointer-events: none;
+                }
+        </style>
+        <style>
+            /*Style for map*/
+            .wrap {
+              width: 400px;
+              height: auto;
+            }
+
+            .map_svg {
+              display: block;
+              margin: 0 auto;
+            }
+            .map_svg a polygon,
+            .map_svg a path {
+              -moz-transition-property: opacity;
+              -o-transition-property: opacity;
+              -webkit-transition-property: opacity;
+              transition-property: opacity;
+              -moz-transition-duration: 0.5s;
+              -o-transition-duration: 0.5s;
+              -webkit-transition-duration: 0.5s;
+              transition-duration: 0.5s;
+              -moz-transition-timing-function: ease;
+              -o-transition-timing-function: ease;
+              -webkit-transition-timing-function: ease;
+              transition-timing-function: ease;
+            }
+            .map_svg a:hover, .map_svg a:focus {
+              cursor: pointer;
+            }
+            .map_svg a:hover polygon,
+            .map_svg a:hover path, .map_svg a:focus polygon,
+            .map_svg a:focus path {
+              opacity: 0.25;
+            }
+
+
+
+
+            /*Style for popping box*/
+            body { background: #171d4b; font-family:Arial;}
+            .box {background:#009ee3;padding:50px;color:#fff;margin:1rem;display:inline-block;cursor:pointer;text-align:center;opacity:1;}
+            .boxContent {
+              background:#fff;
+              width:100%;
+              padding:50px;
+              margin:1rem;
+              opacity: 0;
+              display: none;
+            }
+            .active {
+              opacity:0.5;
+            }
+            .boxContent strong {
+              font-size:30px;
+            }
+            .show-content {
+              opacity: 1;
+              display: block;
+            }
+        </style>
+        <script>
+            jQuery(function ($) {
+                $(".box").click(function() {
+                    var currentActive = $(this).hasClass("active");
+                    $(".boxContent").removeClass("show-content");
+                    $(".box").removeClass("active");
+                    if (!currentActive){
+                        $(this).addClass("active");
+                        var target = $(this).attr("target");
+                        $(".boxContent_" + target).addClass("show-content");
+                    }
+                });
+            });
+
+            function show1() {
+                var iframe1 = document.getElementById('iframe1');
+                var button1 = document.getElementById('reserva1');
+                iframe1.style.display = 'block';
+                button1.style.display = 'block';
+            }
+
+            function show2() {
+                var iframe1 = document.getElementById('iframe2');
+                iframe1.style.display = 'block';
+            }
+
+            function show3() {
+                var iframe1 = document.getElementById('iframe3');
+                iframe1.style.display = 'block';
+            }
+
+            function show4() {
+                var iframe1 = document.getElementById('iframe4');
+                iframe1.style.display = 'block';
+            }
+
+            function show5() {
+                var iframe1 = document.getElementById('iframe5');
+                iframe1.style.display = 'block';
+            }
+
+            function show6() {
+                var iframe1 = document.getElementById('iframe6');
+                iframe1.style.display = 'block';
+            }
+
+            function show7() {
+                var iframe1 = document.getElementById('iframe7');
+                iframe1.style.display = 'block';
+            }
+
+            function show8() {
+                var iframe1 = document.getElementById('iframe8');
+                iframe1.style.display = 'block';
+            }
+
+            function show9() {
+                var iframe1 = document.getElementById('iframe9');
+                iframe1.style.display = 'block';
+            }
+
+            function show10() {
+                var iframe1 = document.getElementById('iframe10');
+                iframe1.style.display = 'block';
+            }
+
+            function show11() {
+                var iframe1 = document.getElementById('iframe11');
+                iframe1.style.display = 'block';
+            }
+
+            function show12() {
+                var iframe1 = document.getElementById('iframe12');
+                iframe1.style.display = 'block';
+            }
+
+            function show13() {
+                var iframe1 = document.getElementById('iframe13');
+                iframe1.style.display = 'block';
+            }
+
+            function show14() {
+                var iframe1 = document.getElementById('iframe14');
+                iframe1.style.display = 'block';
+            }
+
+            function show15() {
+                var iframe1 = document.getElementById('iframe15');
+                iframe1.style.display = 'block';
+            }
+
+            function show16() {
+                var iframe1 = document.getElementById('iframe16');
+                iframe1.style.display = 'block';
+            }
+
+            function show17() {
+                var iframe1 = document.getElementById('iframe17');
+                iframe1.style.display = 'block';
+            }
+
+            function show18() {
+                var iframe1 = document.getElementById('iframe18');
+                iframe1.style.display = 'block';
+            }
+
+            function show19() {
+                var iframe1 = document.getElementById('iframe19');
+                iframe1.style.display = 'block';
+            }
+
+            function show20() {
+                var iframe1 = document.getElementById('iframe20');
+                iframe1.style.display = 'block';
+            }
+
+            function show21() {
+                var iframe1 = document.getElementById('iframe21');
+                iframe1.style.display = 'block';
+            }
+
+            function show22() {
+                var iframe1 = document.getElementById('iframe22');
+                iframe1.style.display = 'block';
+            }
+
+        </script>
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header" style="background-image: url('images/habitacion.jpg');">
+						<!-- change for video style="filter:grayscale(60%);"-->
+						<!--<video autoplay muted loop id="myVideo">
+							<source src="images/Teques_drone.mp4" type="video/mp4">
+						</video>-->
+					<!-- Inner -->
+						<div class="inner">
+							<header>
+								<h1><a href="index.html" id="logo">Mirador Teques</a></h1>
+								<hr />
+								<p>Cuartos que enamoran</p>
+							</header>
+							<footer>
+								<a href="#banner" class="button circled scrolly">Reservar</a>
+							</footer>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+                                <li><a href="index.html">Página principal</a></li>
+                                <li><a href="reservacion.html">Reservaciones</a></li>
+                                <li><a href="cotizacion.html">Cotizaciones</a></li>
+                                <li><a href="ubicacion.html">Ubicación</a></li>
+<li><a href="tour.html">Tour Virtual</a></li>
+
+								<!--
+								<li>
+									<a href="#">Dropdown</a>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Magna phasellus</a></li>
+										<li><a href="#">Etiam dolore nisl</a></li>
+										<li>
+											<a href="#">And a submenu &hellip;</a>
+											<ul>
+												<li><a href="#">Lorem ipsum dolor</a></li>
+												<li><a href="#">Phasellus consequat</a></li>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam dolore nisl</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Veroeros feugiat</a></li>
+									</ul>
+								</li>
+								<li><a href="left-sidebar.html">Left Sidebar</a></li>
+								<li><a href="right-sidebar.html">Right Sidebar</a></li>
+								<li><a href="no-sidebar.html">No Sidebar</a></li>
+								-->
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Banner -->
+				<section id="banner">
+                    <header>
+                        <p>Selecciona la habitación de tu interés.</p>
+                    </header>
+                    <div class="wrap" style="width:100%;max-width:500px;margin:auto;">
+                        <svg version="1.1" class="map_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 802 602" xml:space="preserve" role="img" aria-label="Carte de France par académie">
+                            <g>
+                            <title>background</title>
+                            <rect fill="#fff" id="canvas_background" height="602" width="802" y="-1" x="-1" />
+ </g>
+                            <g>
+                                <a target="1" class="box" aria-label="cuarto_1">
+                                    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_1" height="47" width="135" y="41.45313" x="62.5" stroke-width="1.5" stroke="#000" fill="url(#SVGID_1_)" />
+                                </a>
+
+                                <a target="2" class="box" aria-label="cuarto_2">
+                                    <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_2" height="81" width="54" y="73.45313" x="288.5" stroke-width="1.5" stroke="#000" fill="url(#SVGID_2_)" />
+                                </a>
+
+                                <a target="3" class="box" aria-label="cuarto_3">
+                                    <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_3" height="81" width="54" y="73.45313" x="450.5" stroke-width="1.5" stroke="#000" fill="url(#SVGID_3_)" />
+                                </a>
+
+                                <!--<a target="4" class="box" aria-label="cuarto_4">
+                                    <linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect stroke="#000" id="svg_5" height="81" width="54" y="73.45313" x="342.5" stroke-width="1.5" fill="#fff" />
+                                </a>-->
+
+                                <a target="5" class="box" aria-label="cuarto_5">
+                                    <linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect stroke="#000" id="svg_5" height="81" width="54" y="73.45313" x="342.5" stroke-width="1.5" fill="url(#SVGID_5_)" />
+                                </a>
+
+                                <a target="6" class="box" aria-label="cuarto_6">
+                                    <linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect stroke="#000" id="svg_6" height="81" width="54" y="73.45313" x="396.5" stroke-width="1.5" fill="url(#SVGID_6_)" />
+                                </a>
+
+                                <a target="7" class="box" aria-label="cuarto_7">
+                                    <linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_7" height="81" width="54" y="73.45313" x="666.5" stroke-width="1.5" stroke="#000" fill="url(#SVGID_7_)" />
+                                </a>
+
+                                <a target="8" class="box" aria-label="cuarto_8">
+                                    <linearGradient id="SVGID_8_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_8" height="81" width="54" y="73.45313" x="612.5" stroke-width="1.5" stroke="#000" fill="url(#SVGID_8_)" />
+                                </a>
+
+                                <a target="9" class="box" aria-label="cuarto_9">
+                                    <linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_9" height="81" width="54" y="73.45313" x="558.5" stroke-width="1.5" stroke="#000" fill="url(#SVGID_9_)" />
+                                </a>
+
+                                <a target="10" class="box" aria-label="cuarto_10">
+                                    <linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_10" height="81" width="54" y="73.45313" x="504.5" stroke-width="1.5" stroke="#000" fill="url(#SVGID_10_)" />
+                                </a>
+
+                                <!--<a target="11" class="box" aria-label="cuarto_11">
+                                    <linearGradient id="SVGID_11_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_11" height="81" width="54" y="73.45313" x="288.5" stroke-width="1.5" stroke="#000" fill="url(#SVGID_11_)" />
+                                </a>-->
+
+                                <a target="12" class="box" aria-label="cuarto_12">
+                                    <linearGradient id="SVGID_12_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_12" height="50" width="99" y="248.45313" x="58.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="url(#SVGID_12_)" />
+                                </a>
+
+                                <a target="13" class="box" aria-label="cuarto_13">
+                                    <linearGradient id="SVGID_13_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect stroke="#000" id="svg_13" height="48" width="67" y="298.45313" x="58.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" fill="url(#SVGID_13_)" />
+                                </a>
+
+                                <a target="14" class="box" aria-label="cuarto_14">
+                                    <linearGradient id="SVGID_14_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect stroke="#000" id="svg_14" height="48" width="67" y="346.45313" x="58.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" fill="url(#SVGID_14_)" />
+                                </a>
+
+                                <a target="15" class="box" aria-label="cuarto_15">
+                                    <linearGradient id="SVGID_15_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect stroke="#000" id="svg_15" height="81" width="67" y="394.45313" x="58.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" fill="url(#SVGID_15_)" />
+                                </a>
+
+                                <a target="16" class="box" aria-label="cuarto_16">
+                                    <linearGradient id="SVGID_16_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_16" height="65" width="46" y="395.45313" x="153.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="url(#SVGID_16_)" />
+                                </a>
+
+                                <a target="17" class="box" aria-label="cuarto_17">
+                                    <linearGradient id="SVGID_17_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_17" height="65" width="46" y="395.45313" x="245.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="url(#SVGID_17_)" />
+                                </a>
+
+                                <a target="18" class="box" aria-label="cuarto_18">
+                                    <linearGradient id="SVGID_18_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_18" height="65" width="46" y="395.45313" x="199.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="url(#SVGID_18_)" />
+                                </a>
+
+                                <a target="19" class="box" aria-label="cuarto_19">
+                                    <linearGradient id="SVGID_19_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_19" height="60" width="81" y="460.45313" x="291.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="url(#SVGID_19_)" />
+                                </a>
+
+                                <a target="20" class="box" aria-label="cuarto_20">
+                                    <linearGradient id="SVGID_20_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_20" height="82" width="74" y="329.45313" x="457.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="url(#SVGID_20_)" />
+                                </a>
+
+                                <a target="21" class="box" aria-label="cuarto_21">
+                                    <linearGradient id="SVGID_21_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_21" height="55" width="61" y="329.45313" x="531.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="url(#SVGID_21_)" />
+                                </a>
+
+                                <a target="22" class="box" aria-label="cuarto_22">
+                                    <linearGradient id="SVGID_22_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_22" height="83" width="51" y="275.45313" x="592.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="url(#SVGID_22_)" />
+                                </a>
+
+                                <a target="23" class="box" aria-label="cuarto_23">
+                                    <linearGradient id="SVGID_23_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_23" height="83" width="51" y="358.45313" x="592.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="url(#SVGID_23_)" />
+                                </a>
+
+
+                                <a target="23" class="box" aria-label="cuarto_23">
+                                <linearGradient id="SVGID_23_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                <stop offset="0" style="stop-color:#D96B6C" />
+                                <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect stroke="#000" id="svg_28" height="178" width="32" y="298.5" x="125.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" fill="#fff" />
+                                </a>
+
+                                <a target="23" class="box" aria-label="cuarto_23">
+                                <linearGradient id="SVGID_23_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                <stop offset="0" style="stop-color:#D96B6C" />
+                                <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect stroke="#000" id="svg_30" height="17" width="134" y="459.5" x="157.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" fill="#fff" />
+                                </a>
+
+                                <a target="23" class="box" aria-label="cuarto_23">
+                                <linearGradient id="SVGID_23_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                <stop offset="0" style="stop-color:#D96B6C" />
+                                <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_31" height="32" width="523" y="41.5" x="197.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff" />
+                                </a>
+
+                                <a target="23" class="box" aria-label="cuarto_23">
+                                <linearGradient id="SVGID_23_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                <stop offset="0" style="stop-color:#D96B6C" />
+                                <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_32" height="57" width="61" y="384.5" x="531.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff" />
+                                </a>
+
+                                <a target="23" class="box" aria-label="cuarto_23">
+                                <linearGradient id="SVGID_23_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                <stop offset="0" style="stop-color:#D96B6C" />
+                                <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_33" height="54" width="135" y="275.5" x="457.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff" />
+                                </a>
+
+                                <!--<a target="21" class="box" aria-label="cuarto_21">
+                                    <linearGradient id="SVGID_20_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_21" height="55" width="61" y="329.45313" x="531.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff" />
+                                </a>
+
+                                <a target="21" class="box" aria-label="cuarto_21">
+                                    <linearGradient id="SVGID_20_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_21" height="55" width="61" y="329.45313" x="531.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff" />
+                                </a>
+
+                                <a target="21" class="box" aria-label="cuarto_21">
+                                    <linearGradient id="SVGID_20_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_21" height="55" width="61" y="329.45313" x="531.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff" />
+                                </a>
+
+                                <a target="21" class="box" aria-label="cuarto_21">
+                                    <linearGradient id="SVGID_20_" gradientUnits="userSpaceOnUse" x1="513.8795" y1="695.7123" x2="513.8795" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                                        <stop offset="0" style="stop-color:#D96B6C" />
+                                        <stop offset="1" style="stop-color:#E35980" />
+                                    </linearGradient>
+                                    <rect id="svg_21" height="55" width="61" y="329.45313" x="531.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff" />
+                                </a>-->
+
+                            <!--<a target="2" class="box"  aria-label="strasbourg">
+                            <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="573.422" y1="695.7123" x2="573.422" y2="160.7114" gradientTransform="matrix(1 0 0 -1 0 794.95)">
+                            <stop offset="0" style="stop-color:#D96B6C" />
+                            <stop offset="1" style="stop-color:#E35980" />
+                </linearGradient>
+                            <polygon fill="url(#SVGID_2_)" points="573.1,197.8 562.2,198.2 551.5,192.6 551.2,191.6 547.3,200.4 553.5,203.3 551.5,206.2
+        552.4,206.9 553.8,204.4 557.9,205.1 563.6,209.3 559.9,225.3 556.8,227.7 555.9,227.6 554.4,238.4 561,241.3 558.8,243.2
+        554.1,258.3 548.9,266.9 548.9,273.5 548.9,274 548.6,274.3 548.6,274.3 546.5,276.1 553.9,281 553.9,281 554.3,281.3 554.3,281.8
+        554.3,281.8 554.8,290.9 557.6,290.8 560.3,296.9 563.5,297.5 562.7,300.7 569.8,300.7 572,299.9 572.6,296.3 575.8,296.1 576,293
+        578.3,291 575.2,282.7 578.2,265.3 576.1,253.6 582.8,237.8 584.4,220 596.3,204.6 600.3,193.7 591.8,190.7 576.4,190.2 575,194.4
+            " />
+            </a>
+                  -->
+                                           
+                            </g>
+                        </svg>
+                    </div>
+
+
+
+                    <div class="modal fade" id="bebidas" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" style="max-width:100%;">
+                            <div class="modal-content">
+                                <div class="modal-header">
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
+                                        <!-- Loading Screen -->
+                                        <div data-u="loading" class="jssorl-004-double-tail-spin" style="position:absolute;top:0px;left:0px;text-align:center;background-color:rgba(0,0,0,0.7);">
+                                            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/double-tail-spin.svg" />
+                                        </div>
+                                        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:900px;height:500px;overflow:hidden;">
+                                            <div>
+                                                <img data-u="image" src="images/hab_1.jpeg" />
+                                            </div>
+                                            <!--<div>
+                                                <img data-u="image" src="images/hab_2.jpeg" />
+                                            </div>-->
+                                            <div>
+                                                <img data-u="image" src="images/hab_3.jpeg" />
+                                            </div>
+                                            <div>
+                                                <img data-u="image" src="images/hab_4.jpeg" />
+                                            </div>
+                                            <div>
+                                                <img data-u="image" src="images/hab_5.jpeg" />
+                                            </div>
+
+                                        </div>
+                                        <!-- Bullet Navigator -->
+                                        <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                                            <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                                                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                                    <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <!-- Arrow Navigator -->
+                                        <!--<div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+                            </svg>
+                        </div>
+                        <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+                            </svg>
+                        </div>-->
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>-->
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <section class="boxContent boxContent_1">
+                        <strong>Cuarto 1:</strong><br />
+                        Amplio cuarto con 1 cama king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show1()">Revisar disponibilidad</button> </form><br />
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe1" src="https://calendar.google.com/calendar/embed?src=2lfnick8iid7ar4u5pa2d75roo%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                        <button type="button" id="reserva1" onclick="location.href = 'https://calendar.google.com/calendar/u/0?cid=MmxmbmljazhpaWQ3YXI0dTVwYTJkNzVyb29AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ';" style="display:none;">Revisar disponibilidad</button>
+                    </section>
+
+                    <section class="boxContent boxContent_2">
+                        <strong>Cuarto 2:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show2()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe2" src="https://calendar.google.com/calendar/embed?src=01sg6np7q88rrnqidfbr04smmg%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_3">
+                        <strong>Cuarto 5:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show5()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe5" id="iframe" src="https://calendar.google.com/calendar/embed?src=deghrc4dfpmo19750j73usmglc%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <!--<section class="boxContent boxContent_4">
+                        <strong>Cuarto 4:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show4()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe4" src="https://calendar.google.com/calendar/embed?src=aam1v2c4ijqf66r6tvs7fbsb0s%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>-->
+
+                    <section class="boxContent boxContent_5">
+                        <strong>Cuarto 3:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show3()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe3" src="https://calendar.google.com/calendar/embed?src=a7rs7hdvhsmp6b7l99br62agb0%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_6">
+                        <strong>Cuarto 4:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show4()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe4" src="https://calendar.google.com/calendar/embed?src=aam1v2c4ijqf66r6tvs7fbsb0s%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_7">
+                        <strong>Cuarto 9:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show9()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe9" src="https://calendar.google.com/calendar/embed?src=7fhg02o8b3kvaenr1epdfmt6qg%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_8">
+                        <strong>Cuarto 8:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show8()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe8" src="https://calendar.google.com/calendar/embed?src=9r67auitsn987hi18ocge1qjd4%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_9">
+                        <strong>Cuarto 7:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show7()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe7" src="https://calendar.google.com/calendar/embed?src=01rbh7h0vmakb92l2508obvqbo%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_10">
+                        <strong>Cuarto 6:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show6()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe6" src="https://calendar.google.com/calendar/embed?src=kmbo9fj02hp0ipk39coico4eg4%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <!--<section class="boxContent boxContent_11">
+                        <strong>Cuarto 11:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show11()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe11" src="https://calendar.google.com/calendar/embed?src=p0qkvg771scff45dt03ed0tvbg%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>-->
+
+                    <section class="boxContent boxContent_12">
+                        <strong>Cuarto 10:</strong><br />
+                        Amplio cuarto con 1 cama king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show10()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe10" src="https://calendar.google.com/calendar/embed?src=j8i0jkbvt46vnm795mb10qmj7k%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_13">
+                        <strong>Cuarto 11:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show11()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe11" src="https://calendar.google.com/calendar/embed?src=p0qkvg771scff45dt03ed0tvbg%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_14">
+                        <strong>Cuarto 12:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show12()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe12" src="https://calendar.google.com/calendar/embed?src=d5cclrj53q2ao3lnhm9jaosp5s%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_15">
+                        <strong>Cuarto 13:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show13()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe13" src="https://calendar.google.com/calendar/embed?src=5fi0mu9mj9csr0d297fa2v5sgk%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_16">
+                        <strong>Cuarto 14:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show14()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe14" src="https://calendar.google.com/calendar/embed?src=vi20fr3qnqc5gjl24baman2dl4%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_17">
+                        <strong>Cuarto 16:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show16()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe16" src="https://calendar.google.com/calendar/embed?src=vubf86logfvm78csm428md6js4%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_18">
+                        <strong>Cuarto 15:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show15()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe15" src="https://calendar.google.com/calendar/embed?src=7orh5rev5beq12g7por800v6ng%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_19">
+                        <strong>Cuarto 17:</strong><br />
+                        Cuarto con 1 cama king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show17()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe17" src="https://calendar.google.com/calendar/embed?src=ak117ltpk2lkt8pi69krg9ad74%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_20">
+                        <strong>Cuarto 18:</strong><br />
+                        Cuarto con 1 cama king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show18()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe18" src="https://calendar.google.com/calendar/embed?src=gocfdgt4urum8lfjvlmqf3puo4%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_21">
+                        <strong>Cuarto 19:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show19()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe19" src="https://calendar.google.com/calendar/embed?src=cv0pq5n9l047lhjt5pujg8t3t0%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_22">
+                        <strong>Cuarto 20:</strong><br />
+                        Cuarto con 1 cama king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show20()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe20" src="https://calendar.google.com/calendar/embed?src=l9p0lpt4v93bajvjmstse4oqbc%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_23">
+                        <strong>Cuarto 21:</strong><br />
+                        Cuarto con 1 cama king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show21()">Revisar disponibilidad</button> </form>
+                        <form> <button type="button" id="files" data-toggle="modal" data-target="#bebidas">Conoce la habitación</button> </form>
+                        <iframe id="iframe21" src="https://calendar.google.com/calendar/embed?src=8l9im8p7e313j41sq97unvmeoo%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    
+				</section>
+
+			
+
+			
+
+			<!-- Footer -->
+				<div id="footer">
+					<div class="container">
+						<div class="row">
+
+							<!-- Tweets -->
+								<section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon fa-twitter circled"><span class="label">Tweets</span></h2>
+									</header>
+									<ul class="divided">
+										<li>
+											<article class="tweet">
+												Una experiencia única @Mirador_teques, gracias por todo.
+												<span class="timestamp">1 week ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Excelentes instalaciones, y la vista... única @Mirador_teques.
+												<span class="timestamp">2 months ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Nos veremos pronto! @Mirador_teques.
+												<span class="timestamp">5 months ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Algunos baños con poca agua, pero fuera de eso, todo perfecto. @Mirador_teques.
+												<span class="timestamp">6 months ago</span>
+											</article>
+										</li>
+									</ul>
+								</section>
+
+							<!-- Posts -->
+								<section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon fa-file circled"><span class="label">Posts</span></h2>
+									</header>
+									<ul class="divided">
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Jardines México</a></h3>
+												</header>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Arena Teques</a></h3>
+												</header>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Globos en Teques</a></h3>
+												</header>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Otros eventos</a></h3>
+												</header>
+											</article>
+										</li>
+									</ul>
+								</section>
+
+							<!-- Photos -->
+								<section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon fa-camera circled"><span class="label">Photos</span></h2>
+									</header>
+									<div class="row gtr-25">
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic15.jpg" alt="" /></a>
+										</div>
+									</div>
+								</section>
+
+						</div>
+						<hr />
+						<div class="row">
+							<div class="col-12">
+
+								<!-- Contact -->
+									<section class="contact">
+										<header>
+											<h3>¿Tienes alguna duda, sugerencia o comentario?</h3>
+										</header>
+										<p>Contactanos en nuestras redes sociales.</p>
+										<ul class="icons">
+											<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+										</ul>
+									</section>
+
+								<!-- Copyright -->
+									<div class="copyright">
+										<ul class="menu">
+											<li>&copy; Mirador Teques. Todos los derechos reservados.</li>
+										</ul>
+									</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+		</div>
+        <script type="text/javascript">jssor_1_slider_init();</script>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

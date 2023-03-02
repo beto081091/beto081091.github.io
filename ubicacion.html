@@ -1,0 +1,443 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Mirador Teques</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="shortcut icon" href="/images/mirador.ico" type="image/x-icon">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js' type='text/javascript'></script>
+        <style>
+            /*Style for map*/
+            .wrap {
+              width: 400px;
+              height: auto;
+            }
+
+            .map_svg {
+              display: block;
+              margin: 0 auto;
+            }
+            .map_svg a polygon,
+            .map_svg a path {
+              -moz-transition-property: opacity;
+              -o-transition-property: opacity;
+              -webkit-transition-property: opacity;
+              transition-property: opacity;
+              -moz-transition-duration: 0.5s;
+              -o-transition-duration: 0.5s;
+              -webkit-transition-duration: 0.5s;
+              transition-duration: 0.5s;
+              -moz-transition-timing-function: ease;
+              -o-transition-timing-function: ease;
+              -webkit-transition-timing-function: ease;
+              transition-timing-function: ease;
+            }
+            .map_svg a:hover, .map_svg a:focus {
+              cursor: pointer;
+            }
+            .map_svg a:hover polygon,
+            .map_svg a:hover path, .map_svg a:focus polygon,
+            .map_svg a:focus path {
+              opacity: 0.25;
+            }
+
+
+
+
+            /*Style for popping box*/
+            body { background: #171d4b; font-family:Arial;}
+            .box {background:#009ee3;padding:50px;color:#fff;margin:1rem;display:inline-block;cursor:pointer;text-align:center;opacity:1;}
+            .boxContent {
+              background:#fff;
+              width:100%;
+              padding:50px;
+              margin:1rem;
+              opacity: 0;
+              display: none;
+            }
+            .active {
+              opacity:0.5;
+            }
+            .boxContent strong {
+              font-size:30px;
+            }
+            .show-content {
+              opacity: 1;
+              display: block;
+            }
+        </style>
+        <script>
+            jQuery(function ($) {
+                $(".box").click(function() {
+                    var currentActive = $(this).hasClass("active");
+                    $(".boxContent").removeClass("show-content");
+                    $(".box").removeClass("active");
+                    if (!currentActive){
+                        $(this).addClass("active");
+                        var target = $(this).attr("target");
+                        $(".boxContent_" + target).addClass("show-content");
+                    }
+                });
+            });
+
+            function show1() {
+                var iframe1 = document.getElementById('iframe1');
+                var button1 = document.getElementById('reserva1');
+                iframe1.style.display = 'block';
+                button1.style.display = 'block';
+            }
+
+            function show2() {
+                var iframe1 = document.getElementById('iframe2');
+                iframe1.style.display = 'block';
+            }
+
+            function show3() {
+                var iframe1 = document.getElementById('iframe3');
+                iframe1.style.display = 'block';
+            }
+
+            function show4() {
+                var iframe1 = document.getElementById('iframe4');
+                iframe1.style.display = 'block';
+            }
+
+            function show5() {
+                var iframe1 = document.getElementById('iframe5');
+                iframe1.style.display = 'block';
+            }
+
+            function show6() {
+                var iframe1 = document.getElementById('iframe6');
+                iframe1.style.display = 'block';
+            }
+
+            function show7() {
+                var iframe1 = document.getElementById('iframe7');
+                iframe1.style.display = 'block';
+            }
+
+            function show8() {
+                var iframe1 = document.getElementById('iframe8');
+                iframe1.style.display = 'block';
+            }
+
+            function show9() {
+                var iframe1 = document.getElementById('iframe9');
+                iframe1.style.display = 'block';
+            }
+
+            function show10() {
+                var iframe1 = document.getElementById('iframe10');
+                iframe1.style.display = 'block';
+            }
+
+            function show11() {
+                var iframe1 = document.getElementById('iframe11');
+                iframe1.style.display = 'block';
+            }
+
+            function show12() {
+                var iframe1 = document.getElementById('iframe12');
+                iframe1.style.display = 'block';
+            }
+
+            function show13() {
+                var iframe1 = document.getElementById('iframe13');
+                iframe1.style.display = 'block';
+            }
+
+            function show14() {
+                var iframe1 = document.getElementById('iframe14');
+                iframe1.style.display = 'block';
+            }
+
+            function show15() {
+                var iframe1 = document.getElementById('iframe15');
+                iframe1.style.display = 'block';
+            }
+
+            function show16() {
+                var iframe1 = document.getElementById('iframe16');
+                iframe1.style.display = 'block';
+            }
+
+            function show17() {
+                var iframe1 = document.getElementById('iframe17');
+                iframe1.style.display = 'block';
+            }
+
+            function show18() {
+                var iframe1 = document.getElementById('iframe18');
+                iframe1.style.display = 'block';
+            }
+
+            function show19() {
+                var iframe1 = document.getElementById('iframe19');
+                iframe1.style.display = 'block';
+            }
+
+            function show20() {
+                var iframe1 = document.getElementById('iframe20');
+                iframe1.style.display = 'block';
+            }
+
+            function show21() {
+                var iframe1 = document.getElementById('iframe21');
+                iframe1.style.display = 'block';
+            }
+
+            function show22() {
+                var iframe1 = document.getElementById('iframe22');
+                iframe1.style.display = 'block';
+            }
+
+        </script>
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header" style="background-image: url('images/entrada.jpg');">
+						<!-- change for video style="filter:grayscale(60%);"-->
+						<!--<video autoplay muted loop id="myVideo">
+							<source src="images/Teques_drone.mp4" type="video/mp4">
+						</video>-->
+					<!-- Inner -->
+						<div class="inner">
+							<header>
+								<h1><a href="index.html" id="logo">Ubicación</a></h1>
+								<hr />
+								<p>Ve en donde estamos ubicados</p>
+							</header>
+							<footer>
+								<a href="#banner" class="button circled scrolly">Iniciar</a>
+							</footer>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+                                <li><a href="index.html">Página principal</a></li>
+                                <li><a href="reservacion.html">Reservaciones</a></li>
+                                <li><a href="cotizacion.html">Cotizaciones</a></li>
+                                <li><a href="ubicacion.html">Ubicación</a></li>
+<li><a href="tour.html">Tour Virtual</a></li>
+ 
+								<!--
+								<li>
+									<a href="#">Dropdown</a>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Magna phasellus</a></li>
+										<li><a href="#">Etiam dolore nisl</a></li>
+										<li>
+											<a href="#">And a submenu &hellip;</a>
+											<ul>
+												<li><a href="#">Lorem ipsum dolor</a></li>
+												<li><a href="#">Phasellus consequat</a></li>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam dolore nisl</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Veroeros feugiat</a></li>
+									</ul>
+								</li>
+								<li><a href="left-sidebar.html">Left Sidebar</a></li>
+								<li><a href="right-sidebar.html">Right Sidebar</a></li>
+								<li><a href="no-sidebar.html">No Sidebar</a></li>
+								-->
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Banner -->
+				<section id="banner">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-5">
+                                <table style="height: 500px;">
+                                    <tbody>
+                                        <tr>
+
+                                            <td class="align-middle">
+                                                <img src="../images/home.png" alt="home" height="20" width="20"> <b>Dirección:</b> Mirador 2 Colonia Lomas Tropicales Tequesquitengo, Jojutla Jojutla C.P. 62915 Morelos
+                                                <br><br> <img src="../images/phone.png" alt="phone" height="20" width="20"><b> Teléfono:</b>  6547 9612
+                                                <br><br> <img src="../images/mail.png" alt="mail" height="20" width="20"><b> Correo:</b>  ventas@miradorteques.com
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-7">
+                                <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.5054342603494!2d-99.2707906847656!3d18.641301787338787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdd471c8e326e5%3A0xf87877375f723e1f!2sMirador%202%2C%20Tequesquitengo%2C%20Mor.!5e0!3m2!1sen!2smx!4v1606531704216!5m2!1sen!2smx" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+				</section>
+
+			
+
+			
+
+			<!-- Footer -->
+				<div id="footer">
+					<div class="container">
+						<div class="row">
+
+							<!-- Tweets -->
+								<section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon fa-twitter circled"><span class="label">Tweets</span></h2>
+									</header>
+									<ul class="divided">
+										<li>
+											<article class="tweet">
+												Una experiencia única @Mirador_teques, gracias por todo.
+												<span class="timestamp">1 week ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Excelentes instalaciones, y la vista... única @Mirador_teques.
+												<span class="timestamp">2 months ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Nos veremos pronto! @Mirador_teques.
+												<span class="timestamp">5 months ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Algunos baños con poca agua, pero fuera de eso, todo perfecto. @Mirador_teques.
+												<span class="timestamp">6 months ago</span>
+											</article>
+										</li>
+									</ul>
+								</section>
+
+							<!-- Posts -->
+								<section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon fa-file circled"><span class="label">Posts</span></h2>
+									</header>
+									<ul class="divided">
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Jardines México</a></h3>
+												</header>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Arena Teques</a></h3>
+												</header>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Globos en Teques</a></h3>
+												</header>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Otros eventos</a></h3>
+												</header>
+											</article>
+										</li>
+									</ul>
+								</section>
+
+							<!-- Photos -->
+								<section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon fa-camera circled"><span class="label">Photos</span></h2>
+									</header>
+									<div class="row gtr-25">
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic15.jpg" alt="" /></a>
+										</div>
+									</div>
+								</section>
+
+						</div>
+						<hr />
+						<div class="row">
+							<div class="col-12">
+
+								<!-- Contact -->
+									<section class="contact">
+										<header>
+											<h3>¿Tienes alguna duda, sugerencia o comentario?</h3>
+										</header>
+										<p>Contactanos en nuestras redes sociales.</p>
+										<ul class="icons">
+											<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+										</ul>
+									</section>
+
+								<!-- Copyright -->
+									<div class="copyright">
+										<ul class="menu">
+											<li>&copy; Mirador Teques. Todos los derechos reservados.</li>
+										</ul>
+									</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

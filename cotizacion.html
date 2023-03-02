@@ -1,0 +1,1358 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Mirador Teques</title>
+		<meta charset="utf-8" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="https://b0mh0lt.github.io/freeCodeCamp/_assets/css/material-components700.min.css" />
+        <link rel="shortcut icon" href="/images/mirador.ico" type="image/x-icon">
+        
+        
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <script src='https://b0mh0lt.github.io/freeCodeCamp/_assets/js/jquery351.min.js' type='text/javascript'></script>
+        <script src='https://b0mh0lt.github.io/freeCodeCamp/_assets/js/material-components700.min.js' type='text/javascript'></script>
+        <script src='https://b0mh0lt.github.io/freeCodeCamp/_assets/js/brands.min.js' type='text/javascript'></script>
+        <script src='https://b0mh0lt.github.io/freeCodeCamp/_assets/js/solid.min.js' type='text/javascript'></script>
+        <script src='https://b0mh0lt.github.io/freeCodeCamp/_assets/js/fontawesome.min.js' type='text/javascript'></script>
+        <script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js' type='text/javascript'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' type='text/javascript'></script>
+        <script src='https://unpkg.com/popper.js' type='text/javascript'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js' type='text/javascript'></script>
+        <style>
+            :root {
+  --mdc-theme-secondary: var(--mdc-theme-primary);
+}
+.test {
+  display: inline-block;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: .938rem;
+  font-weight: 400;
+  background-color: #fafafa;
+  margin: 0;
+}
+h2 {
+  margin-top: .75em;
+  margin-bottom: .25em;
+}
+p {
+  margin-top: 0;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.w-100 {
+  width: 100%;
+}
+
+.ribbon {
+  /*background-color: #018786;*/
+  flex-shrink: 0;
+  height: 42vh;
+  width: 100%;
+}
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -40vh;
+}
+.mdc-card {
+  width: 100%;
+  max-width: 860px;
+  margin: 16px;
+}
+
+#dropdown {
+  display: none;
+}
+
+.mdc-radio {
+  margin-right: 2px;
+}
+
+
+
+.mdc-text-field--radio {
+  height: 1.75rem;
+}
+
+.mdc-text-field--radio input {
+  font-size: 0.875rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /*Style for map*/
+            .wrap {
+              width: 400px;
+              height: auto;
+            }
+
+            .map_svg {
+              display: block;
+              margin: 0 auto;
+            }
+            .map_svg a polygon,
+            .map_svg a path {
+              -moz-transition-property: opacity;
+              -o-transition-property: opacity;
+              -webkit-transition-property: opacity;
+              transition-property: opacity;
+              -moz-transition-duration: 0.5s;
+              -o-transition-duration: 0.5s;
+              -webkit-transition-duration: 0.5s;
+              transition-duration: 0.5s;
+              -moz-transition-timing-function: ease;
+              -o-transition-timing-function: ease;
+              -webkit-transition-timing-function: ease;
+              transition-timing-function: ease;
+            }
+            .map_svg a:hover, .map_svg a:focus {
+              cursor: pointer;
+            }
+            .map_svg a:hover polygon,
+            .map_svg a:hover path, .map_svg a:focus polygon,
+            .map_svg a:focus path {
+              opacity: 0.25;
+            }
+
+
+
+
+            /*Style for popping box*/
+            body { background: #171d4b; font-family:Arial;}
+            .box {background:#009ee3;padding:50px;color:#fff;margin:1rem;display:inline-block;cursor:pointer;text-align:center;opacity:1;}
+            .boxContent {
+              background:#fff;
+              width:100%;
+              padding:50px;
+              margin:1rem;
+              opacity: 0;
+              display: none;
+            }
+            .active {
+              opacity:0.5;
+            }
+            .boxContent strong {
+              font-size:30px;
+            }
+            .show-content {
+              opacity: 1;
+              display: block;
+            }
+        </style>
+        <script>
+            jQuery(function ($) {
+                $(".box").click(function() {
+                    var currentActive = $(this).hasClass("active");
+                    $(".boxContent").removeClass("show-content");
+                    $(".box").removeClass("active");
+                    if (!currentActive){
+                        $(this).addClass("active");
+                        var target = $(this).attr("target");
+                        $(".boxContent_" + target).addClass("show-content");
+                    }
+                });
+            });
+
+            
+
+            //const projectName = "survey-form";
+            //localStorage.setItem("example_project", "Survey Form");
+
+            //const textFields = document.querySelectorAll(".mdc-text-field");
+            //for (const textField on textFields) {
+            //    mdc.textField.MDCTextField.attachTo(textField);
+            //}
+
+            //mdc.select.MDCSelect.attachTo(document.querySelector(".mdc-select"));
+
+            //var radios = document.querySelectorAll(".mdc-radio");
+            //for (var i = 0, radio; (radio = radios[i]); i++) {
+            //    new mdc.radio.MDCRadio(radio);
+            //}
+
+
+        </script>
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+            <div id="header" style="background-image: url('images/cotizacion.jpg');">
+                <!-- change for video style="filter:grayscale(60%);"-->
+                <!--<video autoplay muted loop id="myVideo">
+            <source src="images/Teques_drone.mp4" type="video/mp4">
+        </video>-->
+                <!-- Inner -->
+                <div class="inner">
+                    <header>
+                        <h1><a href="index.html" id="logo">Cotizaciones</a></h1>
+                        <hr />
+                        <p>Haz de este día, tu día</p>
+                    </header>
+                    <footer>
+                        <a href="#banner" class="button circled scrolly">Cotiza</a>
+                    </footer>
+                </div>
+
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">Página principal</a></li>
+                        <li><a href="reservacion.html">Reservaciones</a></li>
+                        <li><a href="cotizacion.html">Cotizaciones</a></li>
+                        <li><a href="ubicacion.html">Ubicación</a></li>
+<li><a href="tour.html">Tour Virtual</a></li>
+
+                        <!--
+                <li>
+                    <a href="#">Dropdown</a>
+                    <ul>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Magna phasellus</a></li>
+                        <li><a href="#">Etiam dolore nisl</a></li>
+                        <li>
+                            <a href="#">And a submenu &hellip;</a>
+                            <ul>
+                                <li><a href="#">Lorem ipsum dolor</a></li>
+                                <li><a href="#">Phasellus consequat</a></li>
+                                <li><a href="#">Magna phasellus</a></li>
+                                <li><a href="#">Etiam dolore nisl</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Veroeros feugiat</a></li>
+                    </ul>
+                </li>
+                <li><a href="left-sidebar.html">Left Sidebar</a></li>
+                <li><a href="right-sidebar.html">Right Sidebar</a></li>
+                <li><a href="no-sidebar.html">No Sidebar</a></li>
+                -->
+                    </ul>
+                </nav>
+
+            </div>
+
+			<!-- Banner -->
+				<section>
+                    
+
+                    <!--inicia-->
+
+
+                    <main>
+                        <div class="ribbon"></div>
+                        <div class="card-container">
+                            <div class="mdc-card">
+
+                                <form id="survey-form">
+                                    <div class="mdc-layout-grid">
+                                        <div class="mdc-layout-grid__inner">
+
+
+                                            
+
+                                            <div class="mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-12-desktop">
+                                                <h1 style="font-size:large;"><b><u><i>Bebidas</i></u></b></h1>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-12-desktop flex-column">
+                                                <div class="container">
+                                                    <div class="row mb-4">
+                                                        <div class="col" style="margin: 0 auto;">
+                                                            <p><b>1. Barra Libre</b></p> 
+                                                            <a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#bebidas" style="text-align:left;">Precios</a>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                    
+
+                                                
+
+                                                <div class="mdc-form-field">
+                                                    <div class="mdc-radio">
+                                                        <input class="mdc-radio__native-control" name="is-software-dev" type="radio" value="0">
+                                                        <div class="mdc-radio__background">
+                                                            <div class="mdc-radio__outer-circle"></div>
+                                                            <div class="mdc-radio__inner-circle"></div>
+                                                        </div>
+                                                        <div class="mdc-radio__ripple"></div>
+                                                    </div>
+                                                    <label>Básica</label>
+                                                </div>
+                                                <div class="mdc-form-field">
+                                                    <div class="mdc-radio">
+                                                        <input class="mdc-radio__native-control" name="is-software-dev" type="radio" value="1">
+                                                        <div class="mdc-radio__background">
+                                                            <div class="mdc-radio__outer-circle"></div>
+                                                            <div class="mdc-radio__inner-circle"></div>
+                                                        </div>
+                                                        <div class="mdc-radio__ripple"></div>
+                                                    </div>
+                                                    <label>Estándar</label>
+                                                </div>
+                                                <div class="mdc-form-field">
+                                                    <div class="mdc-radio">
+                                                        <input class="mdc-radio__native-control" name="is-software-dev" type="radio" value="1">
+                                                        <div class="mdc-radio__background">
+                                                            <div class="mdc-radio__outer-circle"></div>
+                                                            <div class="mdc-radio__inner-circle"></div>
+                                                        </div>
+                                                        <div class="mdc-radio__ripple"></div>
+                                                    </div>
+                                                    <label>Premium</label>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-12-desktop">
+                                                <h1 style="font-size:large;"><b><u><i>Catering</i></u></b></h1>
+                                            </div>
+                                            <div class="mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-12-desktop flex-column">
+                                                <div class="container">
+                                                    <div class="row mb-4">
+                                                        <div class="col" style="margin: 0 auto;">
+                                                            <p><b>2. Bocadillos</b></p>
+                                                            <a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#bocadillos" style="text-align:left;">Precios</a>
+
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                <div class="mdc-form-field">
+                                                    <div class="mdc-radio">
+                                                        <input class="mdc-radio__native-control" name="job-pref" type="radio" value="0">
+                                                        <div class="mdc-radio__background">
+                                                            <div class="mdc-radio__outer-circle"></div>
+                                                            <div class="mdc-radio__inner-circle"></div>
+                                                        </div>
+                                                        <div class="mdc-radio__ripple"></div>
+                                                    </div>
+                                                    <label>Mexicanos</label>
+                                                </div>
+                                                <div class="mdc-form-field">
+                                                    <div class="mdc-radio">
+                                                        <input class="mdc-radio__native-control" name="job-pref" type="radio" value="1">
+                                                        <div class="mdc-radio__background">
+                                                            <div class="mdc-radio__outer-circle"></div>
+                                                            <div class="mdc-radio__inner-circle"></div>
+                                                        </div>
+                                                        <div class="mdc-radio__ripple"></div>
+                                                    </div>
+                                                    <label>Internacionales</label>
+                                                </div>
+                                                <div class="mdc-form-field">
+                                                    <div class="mdc-radio">
+                                                        <input class="mdc-radio__native-control" name="job-pref" type="radio" value="1">
+                                                        <div class="mdc-radio__background">
+                                                            <div class="mdc-radio__outer-circle"></div>
+                                                            <div class="mdc-radio__inner-circle"></div>
+                                                        </div>
+                                                        <div class="mdc-radio__ripple"></div>
+                                                    </div>
+                                                    <label>Asador</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-12-desktop flex-column">
+                                                <div class="container">
+                                                    <div class="row mb-4">
+                                                        <div class="col" style="margin: 0 auto;">
+                                                            <p><b>3. Alimentos</b></p>
+                                                            <a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#alimentos" style="text-align:left;">Precios</a>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mdc-form-field">
+                                                    <div class="mdc-radio">
+                                                        <input class="mdc-radio__native-control" name="job-pref" type="radio" value="0">
+                                                        <div class="mdc-radio__background">
+                                                            <div class="mdc-radio__outer-circle"></div>
+                                                            <div class="mdc-radio__inner-circle"></div>
+                                                        </div>
+                                                        <div class="mdc-radio__ripple"></div>
+                                                    </div>
+                                                    <label>Menú 3 tiempos</label>
+                                                </div>
+                                                <div class="mdc-form-field">
+                                                    <div class="mdc-radio">
+                                                        <input class="mdc-radio__native-control" name="job-pref" type="radio" value="1">
+                                                        <div class="mdc-radio__background">
+                                                            <div class="mdc-radio__outer-circle"></div>
+                                                            <div class="mdc-radio__inner-circle"></div>
+                                                        </div>
+                                                        <div class="mdc-radio__ripple"></div>
+                                                    </div>
+                                                    <label>Torna fiesta chilaquiles</label>
+                                                </div>
+                                                <div class="mdc-form-field">
+                                                    <div class="mdc-radio">
+                                                        <input class="mdc-radio__native-control" name="job-pref" type="radio" value="1">
+                                                        <div class="mdc-radio__background">
+                                                            <div class="mdc-radio__outer-circle"></div>
+                                                            <div class="mdc-radio__inner-circle"></div>
+                                                        </div>
+                                                        <div class="mdc-radio__ripple"></div>
+                                                    </div>
+                                                    <label>Torna fiesta cochinita</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </main>
+                    
+
+
+
+
+                    <!-- bebidas -->
+                    <div class="modal fade" id="bebidas" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h4><i><b>Barra Básica</b></i> $275</h4>
+                                    Tequila Tradicional Reposado <br />
+                                    Ron Bacardi Blanco<br />
+                                    Vodka Smirnoff<br />
+                                    Whisky Red Label<br />
+                                    Vino Tinto Cune<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+
+                                    <h4><i><b>Barra Estándar</b></i> $385</h4>
+                                    Tequila Tradicional Reposado<br />
+                                    Ron Bacardi Blanco<br />
+                                    Ginebra Tanqueray<br />
+                                    Whisky Chivas 12<br />
+                                    Brandy Torres X<br />
+                                    Licor 43 o Baileys<br />
+                                    Vino Tinto Casillero del Diablo<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+                                    <h4><i><b>Barra Premium</b></i> $550</h4>
+                                    Tequila Dobel Diamante o Don Julio 70<br />
+                                    Zacapa 23<br />
+                                    Ginebra Bombay o Tanqueray<br />
+                                    Whisky Black Label<br />
+                                    Brandy Torres X<br />
+                                    Licor 43 o Baileys<br />
+                                    Vino Tinto Casa Madero 3 V<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+                                    <p>
+                                        <small>
+                                            Costo hasta por cinco horas<br />
+                                            Precios por persona.<br />
+                                            Todas nuestras barras libres incluyen el personal necesario, mezcladores, hielo y cristalería.<br />
+                                            No incluyen rondas de shots.<br />
+                                            Solo la Barra Libre Premium incluye agua tónica y jugo.
+                                        </small>
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>-->
+                                    <button type="button" class="btn btn-primary">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- bocadillos -->
+                    <div class="modal fade" id="bocadillos" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h4><i><b>Bocadillos Mexicanos</b></i> $220</h4>
+                                    <b>Salados</b><br />
+                                    Quesadillitas de chicharrón especial y queso<br />
+                                    Sopes de pollo<br />
+                                    Gorditas de cochinita pibil y xnipec<br />
+                                    Mini pambazos de papa y longaniza<br />
+                                    Tlacoyos de frijol con chorizo<br />
+                                    Tacos dorados de pollo<br />
+                                    Tostaditas de tinga<br /><br />
+
+                                    <b>Dulces</b><br />
+                                    Pay de queso de pueblo<br />
+                                    Flan con cajeta<br />
+                                    Budín de pan con piña<br />
+                                    Arroz con leche a la naranja<br /><br />
+
+                                    <h4><i><b>Bocadillos Internacionales</b></i> $286</h4>
+                                    <b>Salados</b><br />
+                                    Gyoza de cerdo spicy<br />
+                                    Aranccini de hongos<br />
+                                    Hojaldre de queso Brie y jelly de vino tinto<br />
+                                    Pita con hummus de chile de árbol y brisket<br />
+                                    Mini taco de Pork belly<br />
+                                    Tostada de spicy tuna<br />
+                                    Volován con queso de cabra y pimienta verde<br /><br />
+
+                                    <b>Dulces</b><br />
+                                    Cannolis<br />
+                                    Mini camelado<br />
+                                    Donitas de chocolate y naranja<br />
+                                    Mousse de matcha<br /><br />
+
+                                    <h4><i><b>Bocadillos de Asador</b></i> $264</h4>
+                                    Brocheta de arrachera, pimiento y cebolla<br />
+                                    Brocheta de pollo marinado en naranja y albahaca con calabaza y cebolla<br />
+                                    Brocheta de pastor y piña con cebolla y cilantro<br />
+                                    Brocheta de nopal, queso panela, jitomate y salsa borracha<br />
+                                    Mini choripán de chistorra y queso<br />
+                                    Crostini de jitomate y panela asado<br />
+                                    Sándwich de cebolla y queso a la francesa<br />
+                                    Mini shawarma de pollo con elote<br /><br />
+
+                                    <p>
+                                        <small>
+                                            Costo hasta por cinco horas<br />
+                                            Precios por persona.<br />
+                                            En bocadillos Mexicanos e Intenacionales son 5 opciones para bocadillos salados y 2 para dulces
+
+                                        </small>
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>-->
+                                    <button type="button" class="btn btn-primary">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- alimentos -->
+                    <div class="modal fade" id="alimentos" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+
+                                    <h4><i><b>Menú de tres tiempos</b></i> $286</h4>
+                                    <b>Entradas</b><br />
+                                    Sopa de tortilla mixta <br />
+                                    Ensalada griega de quínoa<br />
+                                    Sopa de hongos caramelizados<br />
+                                    Crema de papa, camote y tocino<br />
+                                    Sopa de haba con elote tatemado<br /><br />
+
+
+                                    <b>Plato fuerte</b><br />
+                                    Pierna de cerdo en adobo de chipotle meco y limón<br />
+                                    Lomo de cerdo con gravy de mandarina<br />
+                                    Pechuga rellena de jamón, queso en salsa de mango<br />
+                                    Pechuga de pollo en salsa de tocino, vino blanco e hinojo<br />
+                                    Roast beef con gravy de hongos<br />
+                                    Filete de res marinado en ajo y jengibre espuma de limón amarillo y coco<br /><br />
+
+                                    <b>Guarnición</b><br />
+                                    Puré de papa con queso parmesano<br />
+                                    Mix de coliflores, brócoli y zanahoria a la mantequilla<br />
+                                    Ensalada de espinaca, lechuga con betabel rostizado<br />
+                                    Ejotes salteados con aceite de oliva y limón<br />
+                                    Fettuccini a la crema<br />
+                                    Tabule de cous cous, aceituna, jitomate, cebolla y menta<br /><br />
+
+                                    <b>Postres</b><br />
+                                    Pan de plátano y salsa de caramelo<br />
+                                    Cheesecake con berries<br />
+                                    Brownie de chocolate abuelita<br />
+                                    Tarta de fruta y crema de lavanda<br />
+                                    Postre de betabel y lemon curd<br />
+                                    Cannolis con chips de chocolate<br /><br />
+
+                                    <h4><i><b>Tornafiestas Chilaquiles</b></i> $110</h4>
+                                    Chilaquiles verdes o rojos <br />
+                                    Pechuga de pollo deshebrada<br />
+                                    Baguette rebanada<br />
+                                    Café americano<br /><br />
+
+                                    <h4><i><b>Tornafiestas Cochinita</b></i> $132</h4>
+                                    Mini chapatas de cochinita pibil con frijoles <br />
+                                    Salsa xnipec<br />
+                                    Café americano<br />
+
+                                    <p>
+                                        <small>
+                                            Incluye la vajilla necesaria<br />
+                                            Precios por persona.<br />
+                                            En caso del menú a 3 tiempos, se debe de elegir una opción por tiempo.
+                                        </small>
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>-->
+                                    <button type="button" class="btn btn-primary">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- bebidas -->
+                    <div class="modal fade" id="bebidas" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h4><i><b>Barra Básica</b></i> $275</h4>
+                                    Tequila Tradicional Reposado <br />
+                                    Ron Bacardi Blanco<br />
+                                    Vodka Smirnoff<br />
+                                    Whisky Red Label<br />
+                                    Vino Tinto Cune<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+
+                                    <h4><i><b>Barra Estándar</b></i> $385</h4>
+                                    Tequila Tradicional Reposado<br />
+                                    Ron Bacardi Blanco<br />
+                                    Ginebra Tanqueray<br />
+                                    Whisky Chivas 12<br />
+                                    Brandy Torres X<br />
+                                    Licor 43 o Baileys<br />
+                                    Vino Tinto Casillero del Diablo<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+                                    <h4><i><b>Barra Premium</b></i> $550</h4>
+                                    Tequila Dobel Diamante o Don Julio 70<br />
+                                    Zacapa 23<br />
+                                    Ginebra Bombay o Tanqueray<br />
+                                    Whisky Black Label<br />
+                                    Brandy Torres X<br />
+                                    Licor 43 o Baileys<br />
+                                    Vino Tinto Casa Madero 3 V<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+                                    <p>
+                                        <small>
+                                            Costo hasta por cinco horas<br />
+                                            Precios por persona.<br />
+                                            Todas nuestras barras libres incluyen el personal necesario, mezcladores, hielo y cristalería.<br />
+                                            No incluyen rondas de shots.<br />
+                                            Solo la Barra Libre Premium incluye agua tónica y jugo.
+                                        </small>
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-primary">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- bebidas -->
+                    <div class="modal fade" id="bebidas" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h4><i><b>Barra Básica</b></i> $275</h4>
+                                    Tequila Tradicional Reposado <br />
+                                    Ron Bacardi Blanco<br />
+                                    Vodka Smirnoff<br />
+                                    Whisky Red Label<br />
+                                    Vino Tinto Cune<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+
+                                    <h4><i><b>Barra Estándar</b></i> $385</h4>
+                                    Tequila Tradicional Reposado<br />
+                                    Ron Bacardi Blanco<br />
+                                    Ginebra Tanqueray<br />
+                                    Whisky Chivas 12<br />
+                                    Brandy Torres X<br />
+                                    Licor 43 o Baileys<br />
+                                    Vino Tinto Casillero del Diablo<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+                                    <h4><i><b>Barra Premium</b></i> $550</h4>
+                                    Tequila Dobel Diamante o Don Julio 70<br />
+                                    Zacapa 23<br />
+                                    Ginebra Bombay o Tanqueray<br />
+                                    Whisky Black Label<br />
+                                    Brandy Torres X<br />
+                                    Licor 43 o Baileys<br />
+                                    Vino Tinto Casa Madero 3 V<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+                                    <p>
+                                        <small>
+                                            Costo hasta por cinco horas<br />
+                                            Precios por persona.<br />
+                                            Todas nuestras barras libres incluyen el personal necesario, mezcladores, hielo y cristalería.<br />
+                                            No incluyen rondas de shots.<br />
+                                            Solo la Barra Libre Premium incluye agua tónica y jugo.
+                                        </small>
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>-->
+                                    <button type="button" class="btn btn-primary">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- bebidas -->
+                    <div class="modal fade" id="bebidas" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h4><i><b>Barra Básica</b></i> $275</h4>
+                                    Tequila Tradicional Reposado <br />
+                                    Ron Bacardi Blanco<br />
+                                    Vodka Smirnoff<br />
+                                    Whisky Red Label<br />
+                                    Vino Tinto Cune<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+
+                                    <h4><i><b>Barra Estándar</b></i> $385</h4>
+                                    Tequila Tradicional Reposado<br />
+                                    Ron Bacardi Blanco<br />
+                                    Ginebra Tanqueray<br />
+                                    Whisky Chivas 12<br />
+                                    Brandy Torres X<br />
+                                    Licor 43 o Baileys<br />
+                                    Vino Tinto Casillero del Diablo<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+                                    <h4><i><b>Barra Premium</b></i> $550</h4>
+                                    Tequila Dobel Diamante o Don Julio 70<br />
+                                    Zacapa 23<br />
+                                    Ginebra Bombay o Tanqueray<br />
+                                    Whisky Black Label<br />
+                                    Brandy Torres X<br />
+                                    Licor 43 o Baileys<br />
+                                    Vino Tinto Casa Madero 3 V<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+                                    <p>
+                                        <small>
+                                            Costo hasta por cinco horas<br />
+                                            Precios por persona.<br />
+                                            Todas nuestras barras libres incluyen el personal necesario, mezcladores, hielo y cristalería.<br />
+                                            No incluyen rondas de shots.<br />
+                                            Solo la Barra Libre Premium incluye agua tónica y jugo.
+                                        </small>
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>-->
+                                    <button type="button" class="btn btn-primary">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- bebidas -->
+                    <div class="modal fade" id="bebidas" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h4><i><b>Barra Básica</b></i> $275</h4>
+                                    Tequila Tradicional Reposado <br />
+                                    Ron Bacardi Blanco<br />
+                                    Vodka Smirnoff<br />
+                                    Whisky Red Label<br />
+                                    Vino Tinto Cune<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+
+                                    <h4><i><b>Barra Estándar</b></i> $385</h4>
+                                    Tequila Tradicional Reposado<br />
+                                    Ron Bacardi Blanco<br />
+                                    Ginebra Tanqueray<br />
+                                    Whisky Chivas 12<br />
+                                    Brandy Torres X<br />
+                                    Licor 43 o Baileys<br />
+                                    Vino Tinto Casillero del Diablo<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+                                    <h4><i><b>Barra Premium</b></i> $550</h4>
+                                    Tequila Dobel Diamante o Don Julio 70<br />
+                                    Zacapa 23<br />
+                                    Ginebra Bombay o Tanqueray<br />
+                                    Whisky Black Label<br />
+                                    Brandy Torres X<br />
+                                    Licor 43 o Baileys<br />
+                                    Vino Tinto Casa Madero 3 V<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+                                    <p>
+                                        <small>
+                                            Costo hasta por cinco horas<br />
+                                            Precios por persona.<br />
+                                            Todas nuestras barras libres incluyen el personal necesario, mezcladores, hielo y cristalería.<br />
+                                            No incluyen rondas de shots.<br />
+                                            Solo la Barra Libre Premium incluye agua tónica y jugo.
+                                        </small>
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>-->
+                                    <button type="button" class="btn btn-primary">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- bebidas -->
+                    <div class="modal fade" id="bebidas" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h4><i><b>Barra Básica</b></i> $275</h4>
+                                    Tequila Tradicional Reposado <br />
+                                    Ron Bacardi Blanco<br />
+                                    Vodka Smirnoff<br />
+                                    Whisky Red Label<br />
+                                    Vino Tinto Cune<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+
+                                    <h4><i><b>Barra Estándar</b></i> $385</h4>
+                                    Tequila Tradicional Reposado<br />
+                                    Ron Bacardi Blanco<br />
+                                    Ginebra Tanqueray<br />
+                                    Whisky Chivas 12<br />
+                                    Brandy Torres X<br />
+                                    Licor 43 o Baileys<br />
+                                    Vino Tinto Casillero del Diablo<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+                                    <h4><i><b>Barra Premium</b></i> $550</h4>
+                                    Tequila Dobel Diamante o Don Julio 70<br />
+                                    Zacapa 23<br />
+                                    Ginebra Bombay o Tanqueray<br />
+                                    Whisky Black Label<br />
+                                    Brandy Torres X<br />
+                                    Licor 43 o Baileys<br />
+                                    Vino Tinto Casa Madero 3 V<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+                                    <p>
+                                        <small>
+                                            Costo hasta por cinco horas<br />
+                                            Precios por persona.<br />
+                                            Todas nuestras barras libres incluyen el personal necesario, mezcladores, hielo y cristalería.<br />
+                                            No incluyen rondas de shots.<br />
+                                            Solo la Barra Libre Premium incluye agua tónica y jugo.
+                                        </small>
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>-->
+                                    <button type="button" class="btn btn-primary">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- bebidas -->
+                    <div class="modal fade" id="bebidas" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h4><i><b>Barra Básica</b></i> $275</h4>
+                                    Tequila Tradicional Reposado <br />
+                                    Ron Bacardi Blanco<br />
+                                    Vodka Smirnoff<br />
+                                    Whisky Red Label<br />
+                                    Vino Tinto Cune<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+
+                                    <h4><i><b>Barra Estándar</b></i> $385</h4>
+                                    Tequila Tradicional Reposado<br />
+                                    Ron Bacardi Blanco<br />
+                                    Ginebra Tanqueray<br />
+                                    Whisky Chivas 12<br />
+                                    Brandy Torres X<br />
+                                    Licor 43 o Baileys<br />
+                                    Vino Tinto Casillero del Diablo<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+                                    <h4><i><b>Barra Premium</b></i> $550</h4>
+                                    Tequila Dobel Diamante o Don Julio 70<br />
+                                    Zacapa 23<br />
+                                    Ginebra Bombay o Tanqueray<br />
+                                    Whisky Black Label<br />
+                                    Brandy Torres X<br />
+                                    Licor 43 o Baileys<br />
+                                    Vino Tinto Casa Madero 3 V<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+                                    <p>
+                                        <small>
+                                            Costo hasta por cinco horas<br />
+                                            Precios por persona.<br />
+                                            Todas nuestras barras libres incluyen el personal necesario, mezcladores, hielo y cristalería.<br />
+                                            No incluyen rondas de shots.<br />
+                                            Solo la Barra Libre Premium incluye agua tónica y jugo.
+                                        </small>
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>-->
+                                    <button type="button" class="btn btn-primary">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- bebidas -->
+                    <div class="modal fade" id="bebidas" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h4><i><b>Barra Básica</b></i> $275</h4>
+                                    Tequila Tradicional Reposado <br />
+                                    Ron Bacardi Blanco<br />
+                                    Vodka Smirnoff<br />
+                                    Whisky Red Label<br />
+                                    Vino Tinto Cune<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+
+                                    <h4><i><b>Barra Estándar</b></i> $385</h4>
+                                    Tequila Tradicional Reposado<br />
+                                    Ron Bacardi Blanco<br />
+                                    Ginebra Tanqueray<br />
+                                    Whisky Chivas 12<br />
+                                    Brandy Torres X<br />
+                                    Licor 43 o Baileys<br />
+                                    Vino Tinto Casillero del Diablo<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+                                    <h4><i><b>Barra Premium</b></i> $550</h4>
+                                    Tequila Dobel Diamante o Don Julio 70<br />
+                                    Zacapa 23<br />
+                                    Ginebra Bombay o Tanqueray<br />
+                                    Whisky Black Label<br />
+                                    Brandy Torres X<br />
+                                    Licor 43 o Baileys<br />
+                                    Vino Tinto Casa Madero 3 V<br />
+                                    Cerveza Nacional Grupo Modelo<br /><br />
+
+                                    <p>
+                                        <small>
+                                            Costo hasta por cinco horas<br />
+                                            Precios por persona.<br />
+                                            Todas nuestras barras libres incluyen el personal necesario, mezcladores, hielo y cristalería.<br />
+                                            No incluyen rondas de shots.<br />
+                                            Solo la Barra Libre Premium incluye agua tónica y jugo.
+                                        </small>
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>-->
+                                    <button type="button" class="btn btn-primary">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wrap" style="width:100%;max-width:500px;margin:auto;">
+                        
+                    </div>
+
+                    <section class="boxContent boxContent_1">
+                        <strong>Cuarto 1:</strong><br />
+                        Amplio cuarto con 1 cama king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show1()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe1" src="https://calendar.google.com/calendar/embed?src=2lfnick8iid7ar4u5pa2d75roo%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                        <button type="button" id="reserva1" onclick="location.href = 'https://calendar.google.com/calendar/u/0?cid=MmxmbmljazhpaWQ3YXI0dTVwYTJkNzVyb29AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ';" style="display:none;">Revisar disponibilidad</button>
+                    </section>
+
+                    <section class="boxContent boxContent_2">
+                        <strong>Cuarto 2:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show2()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe2" src="https://calendar.google.com/calendar/embed?src=01sg6np7q88rrnqidfbr04smmg%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_3">
+                        <strong>Cuarto 5:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show5()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe5" id="iframe" src="https://calendar.google.com/calendar/embed?src=deghrc4dfpmo19750j73usmglc%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <!--<section class="boxContent boxContent_4">
+                        <strong>Cuarto 4:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show4()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe4" src="https://calendar.google.com/calendar/embed?src=aam1v2c4ijqf66r6tvs7fbsb0s%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>-->
+
+                    <section class="boxContent boxContent_5">
+                        <strong>Cuarto 3:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show3()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe3" src="https://calendar.google.com/calendar/embed?src=a7rs7hdvhsmp6b7l99br62agb0%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_6">
+                        <strong>Cuarto 4:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show4()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe4" src="https://calendar.google.com/calendar/embed?src=aam1v2c4ijqf66r6tvs7fbsb0s%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_7">
+                        <strong>Cuarto 9:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show9()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe9" src="https://calendar.google.com/calendar/embed?src=7fhg02o8b3kvaenr1epdfmt6qg%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_8">
+                        <strong>Cuarto 8:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show8()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe8" src="https://calendar.google.com/calendar/embed?src=9r67auitsn987hi18ocge1qjd4%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_9">
+                        <strong>Cuarto 7:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show7()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe7" src="https://calendar.google.com/calendar/embed?src=01rbh7h0vmakb92l2508obvqbo%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_10">
+                        <strong>Cuarto 6:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show6()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe6" src="https://calendar.google.com/calendar/embed?src=kmbo9fj02hp0ipk39coico4eg4%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <!--<section class="boxContent boxContent_11">
+                        <strong>Cuarto 11:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show11()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe11" src="https://calendar.google.com/calendar/embed?src=p0qkvg771scff45dt03ed0tvbg%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>-->
+
+                    <section class="boxContent boxContent_12">
+                        <strong>Cuarto 10:</strong><br />
+                        Amplio cuarto con 1 cama king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show10()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe10" src="https://calendar.google.com/calendar/embed?src=j8i0jkbvt46vnm795mb10qmj7k%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_13">
+                        <strong>Cuarto 11:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show11()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe11" src="https://calendar.google.com/calendar/embed?src=p0qkvg771scff45dt03ed0tvbg%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_14">
+                        <strong>Cuarto 12:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show12()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe12" src="https://calendar.google.com/calendar/embed?src=d5cclrj53q2ao3lnhm9jaosp5s%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_15">
+                        <strong>Cuarto 13:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show13()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe13" src="https://calendar.google.com/calendar/embed?src=5fi0mu9mj9csr0d297fa2v5sgk%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_16">
+                        <strong>Cuarto 14:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show14()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe14" src="https://calendar.google.com/calendar/embed?src=vi20fr3qnqc5gjl24baman2dl4%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_17">
+                        <strong>Cuarto 16:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show16()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe16" src="https://calendar.google.com/calendar/embed?src=vubf86logfvm78csm428md6js4%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_18">
+                        <strong>Cuarto 15:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show15()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe15" src="https://calendar.google.com/calendar/embed?src=7orh5rev5beq12g7por800v6ng%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_19">
+                        <strong>Cuarto 17:</strong><br />
+                        Cuarto con 1 cama king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show17()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe17" src="https://calendar.google.com/calendar/embed?src=ak117ltpk2lkt8pi69krg9ad74%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_20">
+                        <strong>Cuarto 18:</strong><br />
+                        Cuarto con 1 cama king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show18()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe18" src="https://calendar.google.com/calendar/embed?src=gocfdgt4urum8lfjvlmqf3puo4%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_21">
+                        <strong>Cuarto 19:</strong><br />
+                        Cuarto con 2 camas king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show19()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe19" src="https://calendar.google.com/calendar/embed?src=cv0pq5n9l047lhjt5pujg8t3t0%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_22">
+                        <strong>Cuarto 20:</strong><br />
+                        Cuarto con 1 cama king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show20()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe20" src="https://calendar.google.com/calendar/embed?src=l9p0lpt4v93bajvjmstse4oqbc%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    <section class="boxContent boxContent_23">
+                        <strong>Cuarto 21:</strong><br />
+                        Cuarto con 1 cama king size, baño completo y acceso independiente.<br /><br />
+                        <form> <button type="button" id="files" onclick="show21()">Revisar disponibilidad</button> </form>
+                        <iframe id="iframe21" src="https://calendar.google.com/calendar/embed?src=8l9im8p7e313j41sq97unvmeoo%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0;display:none;margin:auto;max-width:100%;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </section>
+
+                    
+				</section>
+
+			
+
+			
+
+			<!-- Footer -->
+				<div id="footer">
+					<div class="container">
+						<div class="row">
+
+							<!-- Tweets -->
+								<section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon fa-twitter circled"><span class="label">Tweets</span></h2>
+									</header>
+									<ul class="divided">
+										<li>
+											<article class="tweet">
+												Una experiencia única @Mirador_teques, gracias por todo.
+												<span class="timestamp">1 week ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Excelentes instalaciones, y la vista... única @Mirador_teques.
+												<span class="timestamp">2 months ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Nos veremos pronto! @Mirador_teques.
+												<span class="timestamp">5 months ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Algunos baños con poca agua, pero fuera de eso, todo perfecto. @Mirador_teques.
+												<span class="timestamp">6 months ago</span>
+											</article>
+										</li>
+									</ul>
+								</section>
+
+							<!-- Posts -->
+								<section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon fa-file circled"><span class="label">Posts</span></h2>
+									</header>
+									<ul class="divided">
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Jardines México</a></h3>
+												</header>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Arena Teques</a></h3>
+												</header>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Globos en Teques</a></h3>
+												</header>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Otros eventos</a></h3>
+												</header>
+											</article>
+										</li>
+									</ul>
+								</section>
+
+							<!-- Photos -->
+								<section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon fa-camera circled"><span class="label">Photos</span></h2>
+									</header>
+									<div class="row gtr-25">
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic15.jpg" alt="" /></a>
+										</div>
+									</div>
+								</section>
+
+						</div>
+						<hr />
+						<div class="row">
+							<div class="col-12">
+
+								<!-- Contact -->
+									<section class="contact">
+										<header>
+											<h3>¿Tienes alguna duda, sugerencia o comentario?</h3>
+										</header>
+										<p>Contactanos en nuestras redes sociales.</p>
+										<ul class="icons">
+											<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+										</ul>
+									</section>
+
+								<!-- Copyright -->
+									<div class="copyright">
+										<ul class="menu">
+											<li>&copy; Mirador Teques. Todos los derechos reservados.</li>
+										</ul>
+									</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
